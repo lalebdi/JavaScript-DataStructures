@@ -51,21 +51,22 @@ function PriorityQueue(){
     };
 
     this.enqueue = function(element){
-        if(this.isEmpty()){
-            collection.push(element)
-        }else{
+        if (this.isEmpty()){ 
+            collection.push(element);
+        } else {
             var added = false;
-            for (let i = 0; i<collection.length; i++){
-                if(element[1] < collection[i][1]) //this is for checking priority
-                collection.splice(i, 0, element);
-                added = true;
-                break;
+            for (var i=0; i<collection.length; i++){
+                 if (element[1] < collection[i][1]){ //checking priorities
+                    collection.splice(i,0,element);
+                    added = true;
+                    break;
+                }
+            }
+            if (!added){
+                collection.push(element);
             }
         }
-        if(!added){
-            collection.push(element);
-        }
-    }
+    };
 
     this.dequeue = function(){
         var value = collection.shift();
