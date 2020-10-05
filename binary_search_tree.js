@@ -126,22 +126,25 @@ class BST {
         }
         this.root = removeNode(this.root, data); //calling the function here. always pass the root node because you always start with the root node
         }
-        isBalanced() {
-        return (this.findMinHeight() >= this.findMaxHeight() - 1)
+
+        // height is distance from the root node to any given node. the root is height = 0 and each row is root++
+
+    isBalanced() { //when a tree is balanced searching is most efficient. When the difference between the minHeight and maxHeight <= 1 then the tree is balanced. 
+        return (this.findMinHeight() >= this.findMaxHeight() - 1) // -> will return true or false
     }
-    findMinHeight(node = this.root) {
-        if (node == null) {
+    findMinHeight(node = this.root) { //the distance from the root node to the first leaf node without 2 children. This is a resursive function.  
+    if (node == null) {
             return -1;
         };
-        let left = this.findMinHeight(node.left);
-        let right = this.findMinHeight(node.right);
+        let left = this.findMinHeight(node.left); // the recurrsion is here 
+        let right = this.findMinHeight(node.right); // the recurrsion is here 
         if (left < right) {
             return left + 1;
         } else {
             return right + 1;
         };
     }
-    findMaxHeight(node = this.root) {
+    findMaxHeight(node = this.root) { //the distance from the root node to the bottom most node. 
         if (node == null) {
             return -1;
         };
@@ -153,13 +156,15 @@ class BST {
             return right + 1;
         };
     }
-    inOrder() {
-        if (this.root == null) {
+
+    // Traversal:
+    inOrder() { // for inOrder traversal you will begin searching for the most left and end in the right most node. 
+        if (this.root == null) { // -> to check if there are items in the tree 
             return null;
         } else {
             var result = new Array();
             function traverseInOrder(node) {       
-            node.left && traverseInOrder(node.left);
+            node.left && traverseInOrder(node.left); // as know in short circit evalution, if the first is true the second will run. 
             result.push(node.data);
             node.right && traverseInOrder(node.right);
             }
@@ -167,7 +172,7 @@ class BST {
             return result;
         };
     }
-    preOrder() {
+    preOrder() { //explore the root nodes before the leaves 
         if (this.root == null) {
             return null;
         } else {
@@ -181,7 +186,7 @@ class BST {
             return result;
         };
     }
-    postOrder() {
+    postOrder() { //explores the leaf nodes before the roots. 
         if (this.root == null) {
             return null;
         } else {
@@ -195,10 +200,12 @@ class BST {
         return result;
         }
     }
+
+    // the levelOrder logic: we start by adding the root to a queue then loop through and dequeue the first item in the queue and add to to an array (Q) and inspect both child in the subtree. If not null, they are each dequeud until its empty. 
     
-    levelOrder() {
+    levelOrder() { //breadth first search. explores all the node in a given level within a tree before moving to the next level. 
         let result = [];
-        let Q = []; 
+        let Q = []; // temporary array
         if (this.root != null) {
             Q.push(this.root);
             while(Q.length > 0) {
