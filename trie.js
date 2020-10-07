@@ -33,7 +33,7 @@ let Trie = function () {
     this.isWord = function (word) {
         let node = this.root;
         while (word.length > 1) {
-            if (!node.keys.has(word[0])) {
+            if (!node.keys.has(word[0])) { // <- I'm checking the first character in the word. 
                 return false;
             } else {
                 node = node.keys.get(word[0]);
@@ -45,7 +45,7 @@ let Trie = function () {
 
     this.print = function () {
         let words = new Array();
-        let search = function (node = this.root, string) {
+        let search = function (node = this.root, string) { // I doubt that I need to set the node to the root here 🧐.
             if (node.keys.size != 0 ) {
                 for ( let letter of node.keys.keys()){
                     search(node.keys.get(letter), string.concat(letter));
