@@ -43,3 +43,15 @@ var adjMatD = [
 // Above ^ the second node has an edge that  is pointing to the first node. and the third node has an edge pointing to the second node. 
 
 // 3- Incidence Matrix:
+// is a 2 dimentional array. uses  rows to represent nodes and columns to represent edges. So, we can have an uneven number of rows and columns. Each column will represent a unique edge and each edge connects to a node
+//  to show that theres an egde between two nodes, put a 1 in the two rows of the particular column. 
+// for a direct graph use a 1 to an edege leaving a particular node. -1 for an edge entering a node.
+var incMatDir = [
+    [1, 0, -1, 1],
+    [-1, 1, 0, 0],
+    [0, -1, 1, 0],
+    [0, 0, 0, -1]
+] ;
+
+// graphes can have weights on their edges. 
+// a different weight can be represented a a number greater than 1. 
