@@ -7,6 +7,13 @@
 // All heaps are complete binary tress -> all levels of the tree are filled and if the level is partially filled it is filled from left to right. 
 // heaps are often implmented as arrays. Notes that index[0] in the array will == null. The last index is the size of the heap. 
 
+/*
+Basic equations:
+left child = i *2
+right child = i * 2 +1
+parent = floor(i/2)
+*/
+
 let MinHeap = function (params) {
     
     let heap = [null];
