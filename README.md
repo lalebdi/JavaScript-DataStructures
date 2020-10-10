@@ -16,3 +16,6 @@ O(n!) Factorial- you are adding a loop for every element
 Iterating through half a collection is still O(n) 
 Two separate collections: O(a * b) -> e.g. nested for loops.
 functions on the same indentation: O(a + b).
+
+
+-What can cause time in a function?
