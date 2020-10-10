@@ -23,3 +23,7 @@ functions on the same indentation: O(a + b).
 Operations (+, -, *, /) Comparisons (<, >, ==)
 Looping (for, while)
 Outside Function call (function())
+
+
+-What causes Space complexity?
+
