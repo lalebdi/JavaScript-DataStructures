@@ -19,3 +19,7 @@ functions on the same indentation: O(a + b).
 
 
 -What can cause time in a function?
+
+Operations (+, -, *, /) Comparisons (<, >, ==)
+Looping (for, while)
+Outside Function call (function())
