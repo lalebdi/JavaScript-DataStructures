@@ -19,6 +19,7 @@ O(n^2) Quadratic- every element in a collection needs to be compared to ever oth
 O(2^n) Exponential- recursive algorithms that solves a problem of size N
 </br>
 O(n!) Factorial- you are adding a loop for every element
+</br>
 
 Iterating through half a collection is still O(n) 
 Two separate collections: O(a * b) -> e.g. nested for loops.
