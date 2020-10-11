@@ -14,7 +14,8 @@ O(n) Linear- for loops, while loops through n items
 </br>
 O(n log(n)) Log Liniear- usually sorting operations
 </br>
-O(n^2) Quadratic- every element in a collection needs to be compared to ever other element. Two nested loops
+O(n^2) Quadratic- every element in a collection needs to be compared to ever other element. Two nested loops.
+</br>
 O(2^n) Exponential- recursive algorithms that solves a problem of size N
 O(n!) Factorial- you are adding a loop for every element
 
